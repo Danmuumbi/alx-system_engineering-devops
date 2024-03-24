@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if the script is executed with sudo privileges
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Please run this script with sudo."
+  exit 1
+fi
+
+# Set variables
+KEY_NAME="school"
+BITS=4096
+PASSPHRASE="betty"
+
+# Generate RSA key pair
+ssh-keygen -t rsa -b $BITS -N "$PASSPHRASE" -f $KEY_NAME
+
+# Output success message
+echo "RSA key pair created successfully."
+

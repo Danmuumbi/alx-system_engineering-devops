@@ -1,0 +1,29 @@
+## Firewall Configuration for web-01
+
+To fulfill the requirements of the project, I configured the Windows Firewall on web-01 to allow incoming traffic on specific TCP ports while blocking all other incoming traffic.
+
+### Steps Taken:
+
+1. Opened Windows Defender Firewall with Advanced Security.
+2. Created a rule to allow SSH traffic on port 22:
+   - Protocol: TCP
+   - Local Port: 22
+   - Action: Allow the connection
+   - Profile: Domain, Private, Public
+3. Created a rule to allow HTTP traffic on port 80:
+   - Protocol: TCP
+   - Local Port: 80
+   - Action: Allow the connection
+   - Profile: Domain, Private, Public
+4. Created a rule to allow HTTPS traffic on port 443:
+   - Protocol: TCP
+   - Local Port: 443
+   - Action: Allow the connection
+   - Profile: Domain, Private, Public
+
+### Verification:
+
+- Checked the Inbound Rules list in Windows Defender Firewall with Advanced Security to ensure that the rules were created and enabled.
+- Tested connectivity to web-01 using SSH (port 22), HTTP (port 80), and HTTPS (port 443) from another machine to verify that the specified ports are accessible.
+
+
